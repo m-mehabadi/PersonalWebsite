@@ -1,0 +1,38 @@
+.card {
+  border-left: 4px solid #e1e4e8;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.card-header {
+  margin-bottom: 8px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.dates {
+  color: #586069;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+.skills {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills li {
+  background-color: #f1f8ff;
+  color: #0366d6;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}

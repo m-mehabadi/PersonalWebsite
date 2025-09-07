@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <h3>{{ title }}</h3>
+    <div class="dates">{{ startDate }} - {{ endDate }}</div>
+  </div>
+  <div class="card-body">
+    <p>{{ shortDescription }}</p>
+  </div>
+  <div class="card-footer">
+    <ul class="skills">
+      <li *ngFor="let skill of skills">{{ skill }}</li>
+    </ul>
+  </div>
+</div>

@@ -20,15 +20,36 @@
       <h2>About Me</h2>
       <p>This is the about section. You can write a bit about yourself here.</p>
     </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>This is the projects section. You can list your projects here.</p>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        This is the contact section. You can put your contact information here.
-      </p>
-    </section>
+    <div class="nav-container">
+      <div class="main-nav-buttons">
+        <button
+          *ngFor="let category of mainCategories"
+          (click)="filter(category)"
+          [class.active]="selectedCategory === category"
+        >
+          {{ category }}
+        </button>
+      </div>
+      <div class="secondary-nav-buttons">
+        <button
+          *ngFor="let category of secondaryCategories"
+          (click)="filter(category)"
+          [class.active]="selectedCategory === category"
+        >
+          {{ category }}
+        </button>
+      </div>
+    </div>
+    <div class="projects-container">
+      <app-card
+        *ngFor="let project of projects"
+        [hidden]="!project.categories.includes(selectedCategory)"
+        [startDate]="project.startDate"
+        [endDate]="project.endDate"
+        [title]="project.title"
+        [shortDescription]="project.shortDescription"
+        [skills]="project.skills"
+      ></app-card>
+    </div>
   </div>
 </div>
