@@ -14,4 +14,10 @@ export class CardComponent {
   @Input() title: string = '';
   @Input() shortDescription: string = '';
   @Input() skills: string[] = [];
+  @Input() publicationDate: string = '';
+  @Input() conferenceLink: string = '';
+  @Input() paperLink: string = '';
+  @Input() authors: string = '';
+  @Input() publisher: string = '';
+  @Input() status: string = '';
 }

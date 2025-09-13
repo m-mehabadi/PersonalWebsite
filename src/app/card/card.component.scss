@@ -36,3 +36,56 @@
   border-radius: 4px;
   font-size: 0.9em;
 }
+
+.publication-details {
+  margin-top: 12px;
+}
+
+.authors {
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.publication-links {
+  margin-top: 12px;
+  display: flex;
+  gap: 16px;
+}
+
+.conference-link,
+.paper-link {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  color: #24292e;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+}
+
+.conference-link:hover,
+.paper-link:hover {
+  background-color: #f0f3f6;
+  text-decoration: none;
+}
+
+.publication-status {
+  margin-top: 12px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: #2ea44f;
+  color: white;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.publication-publisher {
+  margin-top: 8px;
+  font-size: 0.9em;
+}

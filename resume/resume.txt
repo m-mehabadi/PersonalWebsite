@@ -1,0 +1,69 @@
+Sadjad Mehabadi
+ Fredericton, NB, CA
++1 (506) 897-4211
+https://github.com/m-mehabadi  
+ms.mehabadi@gmail.com
+https://www.linkedin.com/in/mehabadi/  
+Work Experience
+1/2023 – 4/2023	Software Engineer Intern, anessa, Fredericton, NB, Canada
+•	Development, testing and documentation of RESTful API services in a microservice solution.
+•	Implemented feed forward neural networks for prediction in simulation processes.
+•	Researched and completed a technical document on the implementation of a Real-time Machine Learning solution.
+Skills: Java, Spring, RESTful services & APIs, Machine Learning, Deep Learning, MongoDB, Docker, Jira, Bitbucket, Angular, Node.js
+	
+8/2021 – 4/2022	Machine Learning Engineer, MCI (Hamrah-e-Aval) R&D Center, Tehran, Iran
+•	Development on scalable AI platform and deployment of distributed Machine Learning and Deep Learning using Kubernetes, Apache Spark, and Docker.
+Skills: PyTorch, Docker, Kubernetes, Apache Spark, Prometheus
+	
+1/2017 – 11/2017	Software Engineer and Full-Stack Developer, Imen Rayaneh Amirkabir, Co., Tehran, Iran
+•	Design and development of single-page web app with RESTful APIs using MySQL, Python (Django), JavaScript (Vue.js), HTML, CSS
+	
+5/2016 – 12/2016	Full-Stack and Report Developer, Kanoon Farhangi Amoozesh, Tehran, Iran
+•	Development of web app using SQL Server, C# (.NET MVC4), JavaScript (JQuery), HTML, CSS
+•	Development of reporting tools for BI
+Education
+2022 – Present	University of New Brunswick
+Ph.D., Computer Science
+•	GPA: 4.3 out of 4.3
+•	Research on smart grids including simulation of power grids with presence of distributed energy resources, Optimization and prediction on smart grids, real-time data analytics cloud solutions.
+	
+2018 – 2021	Sharif University of Technology
+M.Sc., Artificial Intelligence and Robotics
+•	GPA: 17.9 out of 20
+
+
+•	Research on improving robustness of deep neural networks in image classification and semantic segmentation.
+
+•	Selected Courses: Digital Image Processing, Digital Signal Processing, Advanced 3D Computer Vision, Deep Learning, Machine Learning, Machine Learning Theory
+	
+2012 – 2017 	Amirkabir University of Technology
+B.Sc., Computer Engineering
+•	GPA: 16.65 out of 20
+
+
+•	Selected Courses: Artificial Intelligence, Web Engineering, Probability and Statistics, Algorithm Design and Data Structure, Advanced Programming
+Areas of Interest
+•	Machine Learning
+•	Deep Learning
+•	Machine Learning Engineering and Data Engineering
+•	Image Processing and Computer Vision
+•	Stochastic Processes
+•	Signals and Systems
+•	Time Series Analysis
+Skills
+Programming	•	Python, Java, C#, C/C++, MATLAB, Shell Script
+•	JavaScript (ES5/ES6), HTML/CSS, SASS
+	
+Data Science	•	PyTorch, TensorFlow, Keras
+•	scikit-learn, Numpy, Pandas, PIL, OpenCV, Apache Spark, Matplotlib
+	
+Backend & Web Development	•	Django, Flask, FastAPI, Spring, .NET Core, .NET MVC, Express
+•	Vue.js, Nuxt.js, React.js, Node.js
+	
+Database	•	PostgreSQL, SQL Server, MySQL
+•	MongoDB, Apache Kafka, Redis
+	
+Miscellaneous	•	Git¬, Linux, Jupyter Notebook, vscode.
+Languages
+•	Persian: Native
+•	English: Full professional proficiency (IELTS 7.5: R 7.5, L 7.5, W 7.0, S 7.0)

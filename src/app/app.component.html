@@ -3,22 +3,37 @@
     <div class="profile">
       <img
         src="assets/my-profile-image.jpg"
-        alt="Your Name"
+        alt="Mo Mehabadi"
         class="profile-pic"
       />
-      <h2>Your Name</h2>
-      <p>Software Developer</p>
+      <h2>Mo Mehabadi</h2>
+      <p>PhD Student in Computer Science</p>
       <div class="social-links">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter</a>
+        <a href="https://github.com/m-mehabadi" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/mehabadi/" target="_blank"
+          >LinkedIn</a
+        >
       </div>
     </div>
   </div>
   <div class="main-content">
     <section id="about">
       <h2>About Me</h2>
-      <p>This is the about section. You can write a bit about yourself here.</p>
+      <p>
+        I'm a Computer Science PhD candidate at the University of New Brunswick,
+        focusing on smart grid technologies, distributed energy resources, and
+        real-time data analytics. With experience in both academia and industry,
+        I combine theoretical knowledge with practical implementation skills
+        across machine learning, software engineering, and full-stack
+        development.
+      </p>
+      <p>
+        My technical expertise spans Python, Java, and JavaScript ecosystems,
+        with specialized knowledge in machine learning frameworks (PyTorch,
+        TensorFlow), web development (Angular, React, Django), and data
+        engineering. I'm passionate about developing robust AI solutions that
+        can scale in production environments.
+      </p>
     </section>
     <div class="nav-container">
       <div class="main-nav-buttons">
@@ -44,11 +59,17 @@
       <app-card
         *ngFor="let project of projects"
         [hidden]="!project.categories.includes(selectedCategory)"
-        [startDate]="project.startDate"
-        [endDate]="project.endDate"
+        [startDate]="project.startDate || ''"
+        [endDate]="project.endDate || ''"
         [title]="project.title"
         [shortDescription]="project.shortDescription"
         [skills]="project.skills"
+        [publicationDate]="project.publicationDate || ''"
+        [conferenceLink]="project.conferenceLink || ''"
+        [paperLink]="project.paperLink || ''"
+        [authors]="project.authors || ''"
+        [publisher]="project.publisher || ''"
+        [status]="project.status || ''"
       ></app-card>
     </div>
   </div>

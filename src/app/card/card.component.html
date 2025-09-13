@@ -1,12 +1,38 @@
 <div class="card">
   <div class="card-header">
     <h3>{{ title }}</h3>
-    <div class="dates">{{ startDate }} - {{ endDate }}</div>
+    <div class="dates" *ngIf="publicationDate">{{ publicationDate }}</div>
+    <div class="dates" *ngIf="!publicationDate && (startDate || endDate)">
+      {{ startDate }} - {{ endDate }}
+    </div>
   </div>
   <div class="card-body">
     <p>{{ shortDescription }}</p>
+    <div class="publication-details" *ngIf="authors">
+      <p class="authors"><strong>Authors:</strong> {{ authors }}</p>
+    </div>
+    <div class="publication-links" *ngIf="conferenceLink || paperLink">
+      <a
+        *ngIf="conferenceLink"
+        [href]="conferenceLink"
+        target="_blank"
+        class="conference-link"
+        >Conference Website</a
+      >
+      <a *ngIf="paperLink" [href]="paperLink" target="_blank" class="paper-link"
+        >View Paper</a
+      >
+    </div>
+    <div class="publication-status" *ngIf="status">
+      <p>
+        <span class="status-badge">{{ status }}</span>
+      </p>
+    </div>
+    <div class="publication-publisher" *ngIf="publisher">
+      <p><strong>Publisher:</strong> {{ publisher }}</p>
+    </div>
   </div>
-  <div class="card-footer">
+  <div class="card-footer" *ngIf="skills && skills.length > 0">
     <ul class="skills">
       <li *ngFor="let skill of skills">{{ skill }}</li>
     </ul>
