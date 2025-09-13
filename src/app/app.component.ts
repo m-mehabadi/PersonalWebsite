@@ -94,13 +94,16 @@ export class AppComponent {
         'Image Processing',
         'Computer Vision',
         'Neural Networks',
+        'PyTorch',
+        'TensorFlow',
+        'Adversarial Machine Learning',
       ],
       categories: ['education'],
     },
     {
       startDate: '2012',
       endDate: '2017',
-      title: 'B.Sc., Computer Engineering',
+      title: 'B.Sc. Engineering, Computer Engineering Minor',
       institution: 'Amirkabir University of Technology',
       location: 'Tehran, Iran',
       shortDescription:
@@ -215,6 +218,7 @@ export class AppComponent {
       skills: [
         'PyTorch',
         'TensorFlow',
+        'JAX',
         'Keras',
         'scikit-learn',
         'NumPy',
@@ -320,6 +324,26 @@ export class AppComponent {
       categories: ['projects'],
     },
     {
+      startDate: '2018',
+      endDate: '2021',
+      title:
+        'Improving Robustness of Deep Neural Networks Against Adversarial Examples in Image',
+      shortDescription:
+        'M.Sc. thesis focused on enhancing the adversarial robustness of both classification and semantic segmentation networks.',
+      detailedDescription:
+        "My M.Sc. thesis conducted under Professor Kasaei's supervision in the Image Processing Lab (IPL) focused on exploring and improving the adversarial robustness of neural networks. I studied how robustness could be improved through optimization approaches rather than focusing on specific model architectures, allowing the method to be adopted across different models and tasks. I proposed an approach that uses the gradient of steepest ascent of the objective with respect to the input batch to create an adversary batch, then trains the model on this batch before continuing to the next iteration. This approach was successfully applied to neural networks for both classification and semantic segmentation tasks, demonstrating improved robustness against adversarial examples.",
+      skills: [
+        'PyTorch',
+        'TensorFlow',
+        'Deep Learning',
+        'Computer Vision',
+        'Adversarial Machine Learning',
+        'Image Classification',
+        'Semantic Segmentation',
+      ],
+      categories: ['projects'],
+    },
+    {
       startDate: '2020',
       endDate: '2021',
       title: 'GradMaker - Multi-Task Learning Framework',
@@ -395,6 +419,7 @@ export class AppComponent {
         'Differentiable Simulation',
         'Energy Time Series',
         'Stochastic Generation',
+        'JAX',
       ],
       categories: ['publications'],
     },
