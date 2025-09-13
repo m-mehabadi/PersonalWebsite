@@ -55,13 +55,13 @@ export class AppComponent {
 
   // Skill categories for filtering
   skillCategories = [
-    'All Skills',
-    'Programming',
     'Data Science & Machine Learning',
-    'Web & Backend Development',
+    'Programming',
     'Database & Infrastructure',
+    'Web & Backend Development',
+    'All Skills',
   ];
-  selectedSkillCategory: string = 'All Skills';
+  selectedSkillCategory: string = 'Programming';
 
   projects: Project[] = [
     // Education entries (chronological order, newest first)

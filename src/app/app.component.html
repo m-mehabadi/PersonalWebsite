@@ -80,9 +80,19 @@
 
     <!-- Skills view with detailed skill components -->
     <div class="skills-container" *ngIf="selectedCategory === 'skills'">
+      <div class="skills-filter-header">
+        <span class="filter-title">Filter by category:</span>
+        <button
+          (click)="filterSkills('All Skills')"
+          [class.active]="selectedSkillCategory === 'All Skills'"
+          class="all-skills-button"
+        >
+          (view all skills)
+        </button>
+      </div>
       <div class="skills-filter">
         <button
-          *ngFor="let category of skillCategories"
+          *ngFor="let category of skillCategories.slice(0, -1)"
           (click)="filterSkills(category)"
           [class.active]="selectedSkillCategory === category"
           class="skill-filter-button"
