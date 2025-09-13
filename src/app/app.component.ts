@@ -2,6 +2,23 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CardComponent } from './card/card.component';
+import { SkillDetailComponent } from './skill-detail/skill-detail.component';
+
+interface SkillReference {
+  projectTitle: string;
+  projectType: string; // 'education', 'professional experiences', 'projects'
+  institution?: string;
+  startDate?: string;
+  endDate?: string;
+}
+
+interface SkillDetail {
+  name: string;
+  proficiency: number; // 1-5 scale
+  yearsOfExperience: number;
+  category: string; // 'Programming', 'Data Science & Machine Learning', etc.
+  references: SkillReference[];
+}
 
 interface Project {
   startDate?: string;
@@ -25,7 +42,7 @@ interface Project {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, SkillDetailComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -35,6 +52,16 @@ export class AppComponent {
   mainCategories = ['education', 'professional experiences', 'publications'];
   secondaryCategories = ['projects', 'skills'];
   categories = [...this.mainCategories, ...this.secondaryCategories];
+
+  // Skill categories for filtering
+  skillCategories = [
+    'All Skills',
+    'Programming',
+    'Data Science & Machine Learning',
+    'Web & Backend Development',
+    'Database & Infrastructure',
+  ];
+  selectedSkillCategory: string = 'All Skills';
 
   projects: Project[] = [
     // Education entries (chronological order, newest first)
@@ -403,4 +430,223 @@ export class AppComponent {
   filter(category: string) {
     this.selectedCategory = category;
   }
+
+  filterSkills(category: string) {
+    this.selectedSkillCategory = category;
+  }
+
+  getFilteredSkills(): SkillDetail[] {
+    if (this.selectedSkillCategory === 'All Skills') {
+      return this.skillDetails;
+    }
+    return this.skillDetails.filter(
+      (skill) => skill.category === this.selectedSkillCategory
+    );
+  }
+
+  // Skill details with references to projects/experiences
+  skillDetails: SkillDetail[] = [
+    // Programming Skills
+    {
+      name: 'Python',
+      proficiency: 5,
+      yearsOfExperience: 7,
+      category: 'Programming',
+      references: [
+        {
+          projectTitle: 'PhD in Computer Science',
+          projectType: 'education',
+          institution: 'University of New Brunswick',
+          startDate: '2022',
+          endDate: 'Present',
+        },
+        {
+          projectTitle: 'Distributed Deep Learning Infrastructure',
+          projectType: 'projects',
+          institution: 'MCI R&D Center',
+          startDate: '2021',
+          endDate: '2022',
+        },
+        {
+          projectTitle: 'GradMaker - Multi-Task Learning Framework',
+          projectType: 'projects',
+          startDate: '2020',
+          endDate: '2021',
+        },
+        {
+          projectTitle: 'Data Warehouse & BI Tool',
+          projectType: 'projects',
+          institution: 'Imen Rayaneh Amirkabir, Co.',
+          startDate: '2017',
+          endDate: '2017',
+        },
+      ],
+    },
+    {
+      name: 'Java',
+      proficiency: 4,
+      yearsOfExperience: 3,
+      category: 'Programming',
+      references: [
+        {
+          projectTitle: 'Software Engineer Intern',
+          projectType: 'professional experiences',
+          institution: 'anessa',
+          startDate: '01/2023',
+          endDate: '04/2023',
+        },
+      ],
+    },
+    {
+      name: 'TypeScript',
+      proficiency: 4,
+      yearsOfExperience: 2,
+      category: 'Programming',
+      references: [
+        {
+          projectTitle: 'Personal Website',
+          projectType: 'projects',
+          startDate: '2023',
+          endDate: 'Present',
+        },
+      ],
+    },
+
+    // Data Science & Machine Learning
+    {
+      name: 'PyTorch',
+      proficiency: 5,
+      yearsOfExperience: 4,
+      category: 'Data Science & Machine Learning',
+      references: [
+        {
+          projectTitle: 'Machine Learning Engineer',
+          projectType: 'professional experiences',
+          institution: 'MCI (Hamrah-e-Aval) R&D Center',
+          startDate: '08/2021',
+          endDate: '04/2022',
+        },
+        {
+          projectTitle: 'GradMaker - Multi-Task Learning Framework',
+          projectType: 'projects',
+          startDate: '2020',
+          endDate: '2021',
+        },
+        {
+          projectTitle: 'M.Sc., Artificial Intelligence and Robotics',
+          projectType: 'education',
+          institution: 'Sharif University of Technology',
+          startDate: '2018',
+          endDate: '2021',
+        },
+      ],
+    },
+    {
+      name: 'TensorFlow',
+      proficiency: 3,
+      yearsOfExperience: 3,
+      category: 'Data Science & Machine Learning',
+      references: [
+        {
+          projectTitle: 'PhD in Computer Science',
+          projectType: 'education',
+          institution: 'University of New Brunswick',
+          startDate: '2022',
+          endDate: 'Present',
+        },
+      ],
+    },
+
+    // Web & Backend Development
+    {
+      name: 'Angular',
+      proficiency: 4,
+      yearsOfExperience: 2,
+      category: 'Web & Backend Development',
+      references: [
+        {
+          projectTitle: 'Personal Website',
+          projectType: 'projects',
+          startDate: '2023',
+          endDate: 'Present',
+        },
+        {
+          projectTitle: 'Software Engineer Intern',
+          projectType: 'professional experiences',
+          institution: 'anessa',
+          startDate: '01/2023',
+          endDate: '04/2023',
+        },
+      ],
+    },
+    {
+      name: 'Spring',
+      proficiency: 3,
+      yearsOfExperience: 1,
+      category: 'Web & Backend Development',
+      references: [
+        {
+          projectTitle: 'Software Engineer Intern',
+          projectType: 'professional experiences',
+          institution: 'anessa',
+          startDate: '01/2023',
+          endDate: '04/2023',
+        },
+      ],
+    },
+    {
+      name: 'Django',
+      proficiency: 4,
+      yearsOfExperience: 4,
+      category: 'Web & Backend Development',
+      references: [
+        {
+          projectTitle: 'Software Engineer and Full-Stack Developer',
+          projectType: 'professional experiences',
+          institution: 'Imen Rayaneh Amirkabir, Co.',
+          startDate: '01/2017',
+          endDate: '11/2017',
+        },
+      ],
+    },
+
+    // Database & Infrastructure
+    {
+      name: 'Docker',
+      proficiency: 4,
+      yearsOfExperience: 3,
+      category: 'Database & Infrastructure',
+      references: [
+        {
+          projectTitle: 'Software Engineer Intern',
+          projectType: 'professional experiences',
+          institution: 'anessa',
+          startDate: '01/2023',
+          endDate: '04/2023',
+        },
+        {
+          projectTitle: 'Machine Learning Engineer',
+          projectType: 'professional experiences',
+          institution: 'MCI (Hamrah-e-Aval) R&D Center',
+          startDate: '08/2021',
+          endDate: '04/2022',
+        },
+      ],
+    },
+    {
+      name: 'MongoDB',
+      proficiency: 3,
+      yearsOfExperience: 1,
+      category: 'Database & Infrastructure',
+      references: [
+        {
+          projectTitle: 'Software Engineer Intern',
+          projectType: 'professional experiences',
+          institution: 'anessa',
+          startDate: '01/2023',
+          endDate: '04/2023',
+        },
+      ],
+    },
+  ];
 }

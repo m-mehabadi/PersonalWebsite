@@ -55,7 +55,8 @@
         </button>
       </div>
     </div>
-    <div class="projects-container">
+    <!-- Regular cards for education, professional experiences, publications, projects -->
+    <div class="projects-container" *ngIf="selectedCategory !== 'skills'">
       <app-card
         *ngFor="let project of projects"
         [hidden]="!project.categories.includes(selectedCategory)"
@@ -75,6 +76,30 @@
         [publisher]="project.publisher || ''"
         [status]="project.status || ''"
       ></app-card>
+    </div>
+
+    <!-- Skills view with detailed skill components -->
+    <div class="skills-container" *ngIf="selectedCategory === 'skills'">
+      <div class="skills-filter">
+        <button
+          *ngFor="let category of skillCategories"
+          (click)="filterSkills(category)"
+          [class.active]="selectedSkillCategory === category"
+          class="skill-filter-button"
+        >
+          {{ category }}
+        </button>
+      </div>
+
+      <div class="skills-grid">
+        <app-skill-detail
+          *ngFor="let skill of getFilteredSkills()"
+          [skillName]="skill.name"
+          [proficiency]="skill.proficiency"
+          [yearsOfExperience]="skill.yearsOfExperience"
+          [references]="skill.references"
+        ></app-skill-detail>
+      </div>
     </div>
   </div>
 </div>
