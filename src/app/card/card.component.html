@@ -7,7 +7,27 @@
     </div>
   </div>
   <div class="card-body">
+    <!-- Institution/Company with location -->
+    <div class="institution-container" *ngIf="institution">
+      <h4 class="institution">{{ institution }}</h4>
+      <span class="location" *ngIf="location">{{ location }}</span>
+    </div>
+
     <p>{{ shortDescription }}</p>
+
+    <!-- Project Description -->
+    <div class="project-description" *ngIf="detailedDescription">
+      <p [innerHTML]="detailedDescription"></p>
+    </div>
+
+    <!-- Project Link -->
+    <div class="project-link" *ngIf="projectLink">
+      <a [href]="projectLink" target="_blank" class="project-link-btn">
+        Visit Project
+      </a>
+    </div>
+
+    <!-- Publication specific fields -->
     <div class="publication-details" *ngIf="authors">
       <p class="authors"><strong>Authors:</strong> {{ authors }}</p>
     </div>

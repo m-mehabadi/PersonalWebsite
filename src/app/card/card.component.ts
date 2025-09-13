@@ -12,7 +12,10 @@ export class CardComponent {
   @Input() startDate: string = '';
   @Input() endDate: string = '';
   @Input() title: string = '';
+  @Input() institution: string = '';
+  @Input() location: string = '';
   @Input() shortDescription: string = '';
+  @Input() detailedDescription: string = '';
   @Input() skills: string[] = [];
   @Input() publicationDate: string = '';
   @Input() conferenceLink: string = '';
@@ -20,4 +23,5 @@ export class CardComponent {
   @Input() authors: string = '';
   @Input() publisher: string = '';
   @Input() status: string = '';
+  @Input() projectLink: string = '';
 }
