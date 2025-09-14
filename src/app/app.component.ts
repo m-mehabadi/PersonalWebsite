@@ -272,15 +272,23 @@ export class AppComponent {
     },
 
     // Projects (most recent first)
+    // {
+    //   startDate: '2025',
+    //   endDate: 'Present',
+    //   title: 'Personal Website',
+    //   shortDescription:
+    //     'A personal website to showcase my skills, experiences, and projects.',
+    //   detailedDescription:
+    //     'I created this website to showcase my professional background, skills, and projects in a clean, GitHub-inspired design. Built with Angular, this project demonstrates my front-end development skills while serving as a living resume that I can easily update as my career progresses.',
+    //   skills: ['Angular', 'TypeScript', 'SCSS', 'Responsive Design'],
+    //   categories: ['projects'],
+    // },
     {
-      startDate: '2023',
-      endDate: 'Present',
-      title: 'Personal Website',
+      title: 'My Personal Website',
       shortDescription:
-        'A personal website to showcase my skills, experiences, and projects.',
-      detailedDescription:
-        'I created this website to showcase my professional background, skills, and projects in a clean, GitHub-inspired design. Built with Angular, this project demonstrates my front-end development skills while serving as a living resume that I can easily update as my career progresses.',
+        'I created this website to showcase my resume/CV. I built it using Angular, and it is publicly available on Github. Please feel free to use the link if you are interested in my website :)',
       skills: ['Angular', 'TypeScript', 'SCSS', 'Responsive Design'],
+      projectLink: 'https://github.com/m-mehabadi/m-mehabadi.github.io',
       categories: ['projects'],
     },
     {
