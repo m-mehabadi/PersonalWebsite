@@ -475,16 +475,16 @@ export class AppComponent {
     {
       name: 'Python',
       proficiency: 5,
-      yearsOfExperience: 7,
+      yearsOfExperience: 8,
       category: 'Programming',
       references: [
-        {
-          projectTitle: 'PhD in Computer Science',
-          projectType: 'education',
-          institution: 'University of New Brunswick',
-          startDate: '2022',
-          endDate: 'Present',
-        },
+        // {
+        //   projectTitle: 'PhD in Computer Science',
+        //   projectType: 'education',
+        //   institution: 'University of New Brunswick',
+        //   startDate: '2022',
+        //   endDate: 'Present',
+        // },
         {
           projectTitle: 'Distributed Deep Learning Infrastructure',
           projectType: 'projects',
@@ -504,6 +504,22 @@ export class AppComponent {
           institution: 'Imen Rayaneh Amirkabir, Co.',
           startDate: '2017',
           endDate: '2017',
+        },
+        {
+          projectTitle:
+            'DGSim: A Scalable Framework For Simulating Energy Consumption Of Household Appliances',
+          projectType: 'publications',
+          institution: 'University of New Brunswick',
+          startDate: '2025',
+          endDate: '2025',
+        },
+        {
+          projectTitle:
+            'Pattern-Driven and Stochastic Generation of Energy Time Series via Differentiable Simulation',
+          projectType: 'publications',
+          institution: 'University of New Brunswick',
+          startDate: '2025',
+          endDate: '2025',
         },
       ],
     },
@@ -552,18 +568,25 @@ export class AppComponent {
           endDate: '04/2022',
         },
         {
+          projectTitle:
+            'Improving Robustness of Deep Neural Networks Against Adversarial Examples in Image',
+          projectType: 'projects',
+          startDate: '2018',
+          endDate: '2021',
+        },
+        {
           projectTitle: 'GradMaker - Multi-Task Learning Framework',
           projectType: 'projects',
           startDate: '2020',
           endDate: '2021',
         },
-        {
-          projectTitle: 'M.Sc., Artificial Intelligence and Robotics',
-          projectType: 'education',
-          institution: 'Sharif University of Technology',
-          startDate: '2018',
-          endDate: '2021',
-        },
+        // {
+        //   projectTitle: 'M.Sc., Artificial Intelligence and Robotics',
+        //   projectType: 'education',
+        //   institution: 'Sharif University of Technology',
+        //   startDate: '2018',
+        //   endDate: '2021',
+        // },
       ],
     },
     {
@@ -573,12 +596,42 @@ export class AppComponent {
       category: 'Data Science & Machine Learning',
       references: [
         {
-          projectTitle: 'PhD in Computer Science',
-          projectType: 'education',
-          institution: 'University of New Brunswick',
-          startDate: '2022',
-          endDate: 'Present',
+          projectTitle:
+            'Improving Robustness of Deep Neural Networks Against Adversarial Examples in Image',
+          projectType: 'projects',
+          startDate: '2018',
+          endDate: '2021',
         },
+        // {
+        //   projectTitle: 'M.Sc., Artificial Intelligence and Robotics',
+        //   projectType: 'education',
+        //   institution: 'Sharif University of Technology',
+        //   startDate: '2018',
+        //   endDate: '2021',
+        // },
+      ],
+    },
+    {
+      name: 'JAX',
+      proficiency: 4,
+      yearsOfExperience: 1,
+      category: 'Data Science & Machine Learning',
+      references: [
+        {
+          projectTitle:
+            'Pattern-Driven and Stochastic Generation of Energy Time Series via Differentiable Simulation',
+          projectType: 'publications',
+          institution: 'University of New Brunswick',
+          startDate: '2025',
+          endDate: '2025',
+        },
+        // {
+        //   projectTitle: 'PhD in Computer Science',
+        //   projectType: 'education',
+        //   institution: 'University of New Brunswick',
+        //   startDate: '2022',
+        //   endDate: 'Present',
+        // },
       ],
     },
 
