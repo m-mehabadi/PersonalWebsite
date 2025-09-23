@@ -39,6 +39,14 @@ interface Project {
   projectLink?: string; // For links to project websites or repos
 }
 
+interface NewsItem {
+  date: string;
+  title: string;
+  description: string;
+  type: 'publication' | 'achievement' | 'education' | 'work' | 'other';
+  link?: string;
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -49,6 +57,7 @@ interface Project {
 export class AppComponent {
   title = 'Mo Mehabadi';
   selectedCategory: string = 'education';
+  currentView: string = 'home'; // 'home' or 'resume'
   mainCategories = ['education', 'professional experiences', 'publications'];
   secondaryCategories = ['projects', 'skills'];
   categories = [...this.mainCategories, ...this.secondaryCategories];
@@ -459,6 +468,59 @@ export class AppComponent {
       categories: ['publications'],
     },
   ];
+
+  // News/Updates items (most recent first)
+  newsItems: NewsItem[] = [
+    {
+      date: '2025-09-01',
+      title: 'Papers Accepted at CASCON 2025',
+      description:
+        'Two papers accepted at CASCON 2025: "Pattern-Driven and Stochastic Generation of Energy Time Series via Differentiable Simulation" and "Benchmarking and Evaluation of Time Series Databases for Appliance-Level Energy Consumption Data".',
+      type: 'publication',
+      link: 'https://conf.researchr.org/home/cascon-2025',
+    },
+    {
+      date: '2025-06-01',
+      title: 'Paper Published at ECMS 2025',
+      description:
+        'Published "DGSim: A Scalable Framework For Simulating Energy Consumption Of Household Appliances" at ECMS 2025.',
+      type: 'publication',
+      link: 'https://www.scs-europe.net/dlib/2025/2025-0562.html',
+    },
+    {
+      date: '2023-04-01',
+      title: 'Completed Software Engineering Internship',
+      description:
+        'Successfully completed internship at Anessa, working on microservices and machine learning for anaerobic digestion simulation.',
+      type: 'work',
+    },
+    {
+      date: '2023-01-01',
+      title: 'Started Internship at Anessa',
+      description:
+        'Began software engineering internship focusing on RESTful API development and neural network implementation.',
+      type: 'work',
+    },
+    {
+      date: '2022-09-01',
+      title: 'Started PhD at University of New Brunswick',
+      description:
+        'Began PhD in Computer Science focusing on smart grids, time-series analytics, and machine learning.',
+      type: 'education',
+    },
+    {
+      date: '2021-09-01',
+      title: 'Completed M.Sc. in AI and Robotics',
+      description:
+        'Graduated from Sharif University of Technology with focus on adversarial robustness in deep neural networks.',
+      type: 'education',
+    },
+  ];
+
+  // Navigation methods
+  switchView(view: string) {
+    this.currentView = view;
+  }
 
   filter(category: string) {
     this.selectedCategory = category;

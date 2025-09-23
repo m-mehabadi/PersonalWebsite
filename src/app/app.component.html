@@ -14,101 +14,156 @@
           >LinkedIn</a
         >
       </div>
+      <div class="navigation">
+        <button
+          (click)="switchView('home')"
+          [class.active]="currentView === 'home'"
+          class="nav-button"
+        >
+          Home
+        </button>
+        <button
+          (click)="switchView('resume')"
+          [class.active]="currentView === 'resume'"
+          class="nav-button"
+        >
+          Resume
+        </button>
+        <a
+          href="assets/cv/Mo_Mehabadi_CV.pdf"
+          target="_blank"
+          class="nav-button cv-download"
+        >
+          Download CV
+        </a>
+      </div>
     </div>
   </div>
   <div class="main-content">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I'm a Computer Science PhD candidate at the University of New Brunswick,
-        focusing on time-series analytics, machine learning for temporal data,
-        and large-scale data processing systems. With experience in both
-        academia and industry, I combine theoretical knowledge with practical
-        implementation skills across machine learning, software engineering, and
-        data science.
-      </p>
-      <p>
-        My technical expertise spans Python and other ecosystems with
-        specialized knowledge in machine learning frameworks (PyTorch,
-        TensorFlow, JAX), time-series modeling, and data engineering. I'm
-        passionate about developing robust AI solutions with efficient
-        algorithms that can scale in production environments.
-      </p>
-    </section>
-    <div class="nav-container">
-      <div class="main-nav-buttons">
-        <button
-          *ngFor="let category of mainCategories"
-          (click)="filter(category)"
-          [class.active]="selectedCategory === category"
-        >
-          {{ category }}
-        </button>
-      </div>
-      <div class="secondary-nav-buttons">
-        <button
-          *ngFor="let category of secondaryCategories"
-          (click)="filter(category)"
-          [class.active]="selectedCategory === category"
-        >
-          {{ category }}
-        </button>
-      </div>
-    </div>
-    <!-- Regular cards for education, professional experiences, publications, projects -->
-    <div class="projects-container" *ngIf="selectedCategory !== 'skills'">
-      <app-card
-        *ngFor="let project of projects"
-        [hidden]="!project.categories.includes(selectedCategory)"
-        [startDate]="project.startDate || ''"
-        [endDate]="project.endDate || ''"
-        [title]="project.title"
-        [institution]="project.institution || ''"
-        [location]="project.location || ''"
-        [shortDescription]="project.shortDescription"
-        [detailedDescription]="project.detailedDescription || ''"
-        [skills]="project.skills"
-        [publicationDate]="project.publicationDate || ''"
-        [conferenceLink]="project.conferenceLink || ''"
-        [paperLink]="project.paperLink || ''"
-        [projectLink]="project.projectLink || ''"
-        [authors]="project.authors || ''"
-        [publisher]="project.publisher || ''"
-        [status]="project.status || ''"
-      ></app-card>
+    <!-- Home View -->
+    <div *ngIf="currentView === 'home'">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I'm a Computer Science PhD candidate at the University of New
+          Brunswick, focusing on time-series analytics, machine learning for
+          temporal data, and large-scale data processing systems. With
+          experience in both academia and industry, I combine theoretical
+          knowledge with practical implementation skills across machine
+          learning, software engineering, and data science.
+        </p>
+        <p>
+          My technical expertise spans Python and other ecosystems with
+          specialized knowledge in machine learning frameworks (PyTorch,
+          TensorFlow, JAX), time-series modeling, and data engineering. I'm
+          passionate about developing robust AI solutions with efficient
+          algorithms that can scale in production environments.
+        </p>
+      </section>
+
+      <!-- News Section -->
+      <section id="news">
+        <h2>Latest Updates</h2>
+        <div class="news-container">
+          <div *ngFor="let newsItem of newsItems" class="news-item">
+            <div class="news-date">{{ newsItem.date | date : "MMM yyyy" }}</div>
+            <div class="news-content">
+              <div class="news-type" [class]="'type-' + newsItem.type">
+                {{ newsItem.type }}
+              </div>
+              <h3 class="news-title">{{ newsItem.title }}</h3>
+              <p class="news-description">{{ newsItem.description }}</p>
+              <a
+                *ngIf="newsItem.link"
+                [href]="newsItem.link"
+                target="_blank"
+                class="news-link"
+              >
+                View Details →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- Skills view with detailed skill components -->
-    <div class="skills-container" *ngIf="selectedCategory === 'skills'">
-      <div class="skills-filter-header">
-        <span class="filter-title">Filter by category:</span>
-        <button
-          (click)="filterSkills('All Skills')"
-          [class.active]="selectedSkillCategory === 'All Skills'"
-          class="all-skills-button"
-        >
-          (view all skills)
-        </button>
+    <!-- Resume View -->
+    <div *ngIf="currentView === 'resume'">
+      <div class="nav-container">
+        <div class="main-nav-buttons">
+          <button
+            *ngFor="let category of mainCategories"
+            (click)="filter(category)"
+            [class.active]="selectedCategory === category"
+          >
+            {{ category }}
+          </button>
+        </div>
+        <div class="secondary-nav-buttons">
+          <button
+            *ngFor="let category of secondaryCategories"
+            (click)="filter(category)"
+            [class.active]="selectedCategory === category"
+          >
+            {{ category }}
+          </button>
+        </div>
       </div>
-      <div class="skills-filter">
-        <button
-          *ngFor="let category of skillCategories.slice(0, -1)"
-          (click)="filterSkills(category)"
-          [class.active]="selectedSkillCategory === category"
-          class="skill-filter-button"
-        >
-          {{ category }}
-        </button>
+      <!-- Regular cards for education, professional experiences, publications, projects -->
+      <div class="projects-container" *ngIf="selectedCategory !== 'skills'">
+        <app-card
+          *ngFor="let project of projects"
+          [hidden]="!project.categories.includes(selectedCategory)"
+          [startDate]="project.startDate || ''"
+          [endDate]="project.endDate || ''"
+          [title]="project.title"
+          [institution]="project.institution || ''"
+          [location]="project.location || ''"
+          [shortDescription]="project.shortDescription"
+          [detailedDescription]="project.detailedDescription || ''"
+          [skills]="project.skills"
+          [publicationDate]="project.publicationDate || ''"
+          [conferenceLink]="project.conferenceLink || ''"
+          [paperLink]="project.paperLink || ''"
+          [projectLink]="project.projectLink || ''"
+          [authors]="project.authors || ''"
+          [publisher]="project.publisher || ''"
+          [status]="project.status || ''"
+        ></app-card>
       </div>
 
-      <div class="skills-grid">
-        <app-skill-detail
-          *ngFor="let skill of getFilteredSkills()"
-          [skillName]="skill.name"
-          [proficiency]="skill.proficiency"
-          [yearsOfExperience]="skill.yearsOfExperience"
-          [references]="skill.references"
-        ></app-skill-detail>
+      <!-- Skills view with detailed skill components -->
+      <div class="skills-container" *ngIf="selectedCategory === 'skills'">
+        <div class="skills-filter-header">
+          <span class="filter-title">Filter by category:</span>
+          <button
+            (click)="filterSkills('All Skills')"
+            [class.active]="selectedSkillCategory === 'All Skills'"
+            class="all-skills-button"
+          >
+            (view all skills)
+          </button>
+        </div>
+        <div class="skills-filter">
+          <button
+            *ngFor="let category of skillCategories.slice(0, -1)"
+            (click)="filterSkills(category)"
+            [class.active]="selectedSkillCategory === category"
+            class="skill-filter-button"
+          >
+            {{ category }}
+          </button>
+        </div>
+
+        <div class="skills-grid">
+          <app-skill-detail
+            *ngFor="let skill of getFilteredSkills()"
+            [skillName]="skill.name"
+            [proficiency]="skill.proficiency"
+            [yearsOfExperience]="skill.yearsOfExperience"
+            [references]="skill.references"
+          ></app-skill-detail>
+        </div>
       </div>
     </div>
   </div>
